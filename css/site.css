@@ -1,0 +1,44 @@
+#title{
+  text-align: center;
+  position:relative;
+}
+.navbar{
+  margin-top:-10;
+}
+#storeTitle{
+  text-align: center;
+}
+#storeAddress{
+  text-align: center;
+}
+.card{
+  position:relative;
+
+}
+#close{
+  position:absolute;
+  right:5;
+  top:5;
+}
+a{
+  color:white;
+}
+#container{
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top:55px;
+}
+.card{
+
+  margin-left: 30px;
+  margin-right: 30px;
+}
+#welcome{
+  position:absolute;
+  right: 10;
+  top:-30;
+}
+.dropdown-menu{
+  z-index:1;
+}

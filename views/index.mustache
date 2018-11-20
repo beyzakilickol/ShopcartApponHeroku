@@ -1,0 +1,63 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/site.css" />
+</head>
+<body>
+<h2 class="bg-dark text-white" id="title">YOUR SHOPPING LIST</h2>
+  <nav class="navbar navbar-dark bg-dark text-white">
+
+    <form action="/add_store" method="POST" >
+   <label>Enter store name:<input type="text" name="name"/></label> &nbsp;&nbsp;&nbsp;
+   <label>Enter store street:<input type="text" name="street"/></label>
+   <label>Enter store city:<input type="text" name="city"/></label>
+   <label>Enter store state:<input type="text" name="state"/></label>
+<input class="btn btn-primary text-white" type="submit" value="Add Store"/>
+</form>
+<div id="welcome">
+  Welcome {{username}}
+  <a href="/logout"><button class="btn btn-warning">Logout</button></a>
+</div>
+
+   <br /><br/>
+
+
+</nav>
+<div id="container">
+{{#stores}}
+  <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+
+
+
+    <a href="/delete/{{id}}"><i id="close" class="fas fa-times"></i></a>
+    <div class="card-header">
+      <h3 id="storeTitle">{{name}}</h3>
+      <p id="storeAddress">
+        {{street}}, {{city}}, {{state}}
+      </p>
+    </div>
+    <div class="card-body">
+      <form action="/add_item" method="POST">
+
+      <h5 class="card-title"><label>Enter item:</label><input type="text" name="item"/>
+      <input type="hidden" name="storeId" value="{{id}}" />
+      <input type="submit" value="Add" class="btn btn-warning"></input>
+      </h5></form>
+      <p class="card-text">
+        {{#items}}
+
+
+          {{name}}
+          <a href="/deleteItem/{{id}}"><i id="delete-item" class="fas fa-times"></i></a>
+      &nbsp;&nbsp;&nbsp;
+        {{/items}}
+    </p>
+    </div>
+  </div>
+  {{/stores}}
+</div>
+
+
+</body>
+</html>
