@@ -18,6 +18,6 @@
     "password": "a2bfc2d401f692d74454d9f950791e1fa6e79920c35e4bbb8d9f39223cae00c5",
     "database": "dcbo1tte9hoisi",
     "host": "ec2-54-235-133-42.compute-1.amazonaws.com",
-    "dialect": "postgres"
+    "dialect": "Heroku Postgres"
   }
 }
