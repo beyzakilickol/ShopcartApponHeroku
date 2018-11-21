@@ -11,6 +11,14 @@ const connectionString = "postgres://localhost:5432/grocerydb"
 // creating a new database object which will allow us to interact with the database
 const db = pgp(connectionString)
 const models = require('./models') //sequelize config
+const PORT = process.env.PORT||3008;
+const config={
+  host:
+  port:
+  database:
+  user:
+  password:
+}
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static('css'))
 app.use(express.static('images'))
