@@ -20,7 +20,5 @@
     "pg-promise": "^8.5.1",
     "sequelize": "^4.41.2"
   },
-  "devDependencies":{},
-  "description":""
 
 }
