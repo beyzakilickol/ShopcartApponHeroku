@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+
   },
   "author": "",
   "license": "ISC",
@@ -17,5 +19,8 @@
     "pg": "^7.6.1",
     "pg-promise": "^8.5.1",
     "sequelize": "^4.41.2"
-  }
+  },
+  "devDependencies":{},
+  "description":""
+
 }
