@@ -7,18 +7,21 @@ var session = require('express-session')
 // import the pg-promise library which is used to connect and execute SQL on a postgres database
 const pgp = require('pg-promise')()
 // connection string which is used to specify the location of the database
-const connectionString = "postgres://localhost:5432/grocerydb"
+const connectionString = process.env.DB_CONN
 // creating a new database object which will allow us to interact with the database
 const db = pgp(connectionString)
+const dotEnv = require('dotenv').config()
 const models = require('./models') //sequelize config
-const PORT = process.env.PORT||3008;
-const config={
-  host:
-  port:
-  database:
-  user:
-  password:
-}
+const PORT = process.env.PORT || 3008;
+
+  const config = {
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      port: process.env.DB_PORT,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
+      ssl: true
+  }
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static('css'))
 app.use(express.static('images'))
@@ -35,7 +38,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
-app.listen(3008,function(req,res){
+app.listen(PORT,function(req,res){
   console.log("Server has started...")
 })
 //------------------------------------------------------
