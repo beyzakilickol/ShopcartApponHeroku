@@ -204,6 +204,7 @@ body {
   width: 900px;
   background: #fff;
   margin: 0 auto;
+  transform: scale(0.8);
   box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
@@ -253,8 +254,12 @@ body {
   margin-bottom: 150px; }
 
 .signup-content {
-  padding: 75px 0; }
-
+  padding: 75px 0;
+  margin-top: -100px;
+ }
+.signup-image-link{
+  margin-left: -85px;
+}
 .signup-form, .signup-image, .signin-form, .signin-image {
   width: 50%;
   overflow: hidden; }
@@ -452,7 +457,9 @@ label.valid {
 
 .signin-content {
   padding-top: 67px;
-  padding-bottom: 87px; }
+  padding-bottom: 87px;
+  margin-top:-130px !important;
+}
 
 .social-login {
   align-items: center;
@@ -631,7 +638,7 @@ body{
 .align{
   text-align: center;
   transform: scale(2);
-  
+
 }
 #mainTitle{
   margin-top: 50px;
