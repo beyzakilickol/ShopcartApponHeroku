@@ -8,8 +8,10 @@ var session = require('express-session')
 const pgp = require('pg-promise')()
 
 
-const dotEnv = require('dotenv').config()
+
 const models = require('./models') //sequelize config
+//-------For Heroku Deploy--------------------
+const dotEnv = require('dotenv').config()
 const PORT = process.env.PORT || 3008;
 // connection string which is used to specify the location of the database
 const connectionString = process.env.DB_CONN
@@ -23,6 +25,7 @@ const connectionString = process.env.DB_CONN
   }
   // creating a new database object which will allow us to interact with the database
   const db = pgp(config)
+  //---------------------------------------------------
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static('css'))
 app.use(express.static('images'))
